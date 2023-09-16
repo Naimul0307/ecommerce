@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Livewire\HomeComponent;
+use App\Livewire\ShopComponent;
+use App\Livewire\CheckoutComponent;
+use App\Livewire\CartComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,3 +22,6 @@ use App\Livewire\HomeComponent;
 //});
 
 Route::get('/', HomeComponent::class)->name('home.index');
+Route::get('/shop', ShopComponent::class)->name('shop');
+Route::get('/cart', CartComponent::class)->name('cart');
+Route::get('/checkout', CheckoutComponent::class)->name('checkout');
