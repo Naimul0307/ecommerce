@@ -3,11 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Livewire\HomeComponent;
 use App\Livewire\ShopComponent;
+use App\Livewire\SearchComponent;
 use App\Livewire\CheckoutComponent;
 use App\Livewire\CartComponent;
 use App\Livewire\DetailsComponent;
 use App\Livewire\Admin\AdminDashboardComponent;
+use App\Livewire\Admin\AdminCategoryComponent;
 use App\Livewire\User\UserDashboardComponent;
+use App\Livewire\CategoryComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +32,8 @@ Route::get('/shop', ShopComponent::class)->name('shop');
 Route::get('/cart', CartComponent::class)->name('cart');
 Route::get('/checkout', CheckoutComponent::class)->name('checkout');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
+Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
+Route::get('/search', SearchComponent::class)->name('product.search');
 
 /* Route::middleware([
     'auth:sanctum',
@@ -48,4 +53,5 @@ Route::middleware(['auth:sanctum','verified'])->group(function(){
 //For Admin
 Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/categories',AdminCategoryComponent::class)->name('admin.categories');
 });
