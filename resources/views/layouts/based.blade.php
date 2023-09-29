@@ -37,7 +37,7 @@
 						<div class="topbar-menu left-menu">
 							<ul>
 								<li class="menu-item" >
-									<a title="Hotline: (+123) 456 789" href="#" ><span class="icon label-before fa fa-mobile"></span>Hotline: (+123) 456 789</a>
+									<a title="Hotline: +971544800863" href="#" ><span class="icon label-before fa fa-mobile"></span>+971544800863</a>
 								</li>
 							</ul>
 						</div>
@@ -79,6 +79,9 @@
                                             <a title="Categories" href="{{route('admin.categories')}}" >Categories</a>
                                         </li>
                                         <li class="menu-item">
+                                            <a title="Categories" href="{{route('admin.products')}}" >All Products</a>
+                                        </li>
+                                        <li class="menu-item">
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST">
@@ -116,7 +119,7 @@
 					<div class="mid-section main-info-area">
 
 						<div class="wrap-logo-top left-section">
-							<a href="index.html" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}" alt="mercado"></a>
+							<a href="{{route('home.index')}}" class="link-to-home"><img src="{{asset('assets/images/logo-top-1.png')}}" alt="mercado"></a>
 						</div>
 
                         @livewire('header-search-component')

@@ -38,11 +38,11 @@ class CategoryComponent extends Component
         {
             $products = Product::where('category_id',$category_id)->orderBy('created_at','DESC')->paginate($this->pagesize);
         }
-        else if($this->sorting =="price")
+        else if($this->sorting == "price")
         {
             $products = Product::where('category_id',$category_id)->orderBy('regular_price','ASC')->paginate($this->pagesize);
         }
-        else if($this->sorting =="price")
+        else if($this->sorting == "price")
         {
             $products = Product::where('category_id',$category_id)->orderBy('regular_price','DESC')->paginate($this->pagesize);
         }

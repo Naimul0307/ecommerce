@@ -19,7 +19,7 @@ class AdminCategoryComponent extends Component
 
     public function render()
     {
-        $categories = Category::paginate(5);
+        $categories = Category::paginate(10);
         return view('livewire.admin.admin-category-component',['categories'=>$categories])->layout('layouts.based');
     }
 }
