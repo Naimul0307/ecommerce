@@ -18,6 +18,7 @@
                                   <th scope="col">Id</th>
                                   <th scope="col">Category Name</th>
                                   <th scope="col">Slug</th>
+                                  <th scope="col">Action</th>
                                 </tr>
                               </thead>
                               <tbody>
@@ -26,6 +27,9 @@
                                     <td>{{$category->id}}</td>
                                     <td>{{$category->name}}</td>
                                     <td>{{$category->slug}}</td>
+                                    <td>
+                                        <a href="{{route('admin.editcategory',['category_slug'=>$category->slug])}}"><i class="fa fa-edit fa-2x"></i></a>
+                                    </td>
                                 </tr>
                                 @endforeach
                               </tbody>
