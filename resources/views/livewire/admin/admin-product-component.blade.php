@@ -22,8 +22,11 @@
                                   <th scope="col">Image</th>
                                   <th scope="col">Name</th>
                                   <th scope="col">Stock</th>
-                                  <th scope="col">Price</th>
+                                  <th scope="col">Regular Price</th>
+                                  <th scope="col">Sale Price</th>
                                   <th scope="col">Category Name</th>
+                                  <th scope="col">SKU</th>
+                                  <th scope="col">Quantity</th>
                                   <th scope="col">Date</th>
                                   <th scope="col">Action</th>
                                 </tr>
@@ -36,7 +39,10 @@
                                     <td>{{$product->name}}</td>
                                     <td>{{$product->stock_status}}</td>
                                     <td>{{$product->regular_price}}</td>
+                                    <td>{{$product->sale_price}}</td>
                                     <td>{{$product->category->name}}</td>
+                                    <td>{{$product->SKU}}</td>
+                                    <td>{{$product->quantity}}</td>
                                     <td>{{$product->created_at}}</td>
                                     <td>
                                         <a href="{{route('admin.editproduct',['product_slug'=>$product->slug])}}"><i class="fa fa-edit fa-2x text-info"></i></a>
