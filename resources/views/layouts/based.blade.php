@@ -16,6 +16,8 @@
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/flexslider.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/color-01.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets/css/select2.min.css')}}">
+
     @livewireStyles
 </head>
 <body class="home-page home-01 ">
@@ -83,6 +85,9 @@
                                         </li>
                                         <li class="menu-item">
                                             <a title="Manage Home Slider" href="{{route('admin.homeslider')}}">Manage Home Slider</a>
+                                        </li>
+                                        <li class="menu-item">
+                                            <a title="Manage Home Categories" href="{{route('admin.homecategories')}}">Manage Home Categories</a>
                                         </li>
                                         <li class="menu-item">
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
@@ -462,12 +467,16 @@
 	<script src="{{asset('assets/js/jquery-ui-1.12.4.minb8ff.js?ver=1.12.4')}}"></script>
 	<script src="{{asset('assets/js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
-	{{-- <script src="{{asset('assets/js/chosen.jquery.min.js')}}"></script> --}}
+   {{--<script src="{{asset('assets/js/chosen.jquery.min.js')}}"></script>--}}
 	<script src="{{asset('assets/js/owl.carousel.min.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.countdown.min.js')}}"></script>
     <script src="{{asset('assets/js/jquery.flexslider.js')}}"></script>
 	<script src="{{asset('assets/js/jquery.sticky.js')}}"></script>
 	<script src="{{asset('assets/js/functions.js')}}"></script>
+    <script src="{{asset('assets/js/select2.min.js')}}"></script>
+
     @livewireScripts
+
+    @stack('scripts')
 </body>
 </html>

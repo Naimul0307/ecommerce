@@ -10,13 +10,14 @@ use Cart;
 
 class ShopComponent extends Component
 {
+    use WithPagination;
     public $sorting;
     public $pagesize;
 
     public function mount()
     {
         $this->sorting = "default";
-        $this->pagesize=12;
+        $this->pagesize= 12;
     }
 
     public function store($product_id,$product_name,$product_price)
@@ -25,8 +26,6 @@ class ShopComponent extends Component
         session()->flash('success_message','Item added in Cart');
         return redirect()->route('cart');
     }
-
-    use WithPagination;
     public function render()
     {
         if($this->sorting == "date")
@@ -37,7 +36,7 @@ class ShopComponent extends Component
         {
             $products = Product::orderBy('regular_price','ASC')->paginate($this->pagesize);
         }
-        else if($this->sorting =="price")
+        else if($this->sorting =="price-desc")
         {
             $products = Product::orderBy('regular_price','DESC')->paginate($this->pagesize);
         }

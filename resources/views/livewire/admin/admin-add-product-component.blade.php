@@ -108,7 +108,7 @@
                        {{-- <div class="form-group">
                             <label class="col-md-4 control-label">Images</label>
                             <div class="col-md-4">
-                                <input type="file" placeholder="Images" class="form-control input-file" wire:model="images" multiple/>
+                                <input type="file" placeholder="Images" class="form-control input-file" wire:model="images" multiple="multiple"/>
                             </div>
                         </div> --}}
                         <div class="form-group">
