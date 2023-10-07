@@ -17,6 +17,9 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/style.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('assets/css/color-01.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('assets/css/select2.min.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.7.7/css/tempus-dominus.min.css" integrity="sha512-wO+rVZhTyJgwKxVY279cD/TZTlW2m0IJQXzoOHfj2w//md58T3jc8ZWHb+HEm8CspcCNnaJVFPyRAGd/Y4ScfA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.5.0/css/bootstrap-datepicker.css" rel="stylesheet">
 
     @livewireStyles
 </head>
@@ -89,6 +92,10 @@
                                         <li class="menu-item">
                                             <a title="Manage Home Categories" href="{{route('admin.homecategories')}}">Manage Home Categories</a>
                                         </li>
+                                    </li>
+                                    <li class="menu-item">
+                                        <a title="Manage Home Categories" href="{{route('admin.sale')}}">Admin Sale</a>
+                                    </li>
                                         <li class="menu-item">
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
@@ -474,9 +481,15 @@
 	<script src="{{asset('assets/js/jquery.sticky.js')}}"></script>
 	<script src="{{asset('assets/js/functions.js')}}"></script>
     <script src="{{asset('assets/js/select2.min.js')}}"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js" integrity="sha512-CryKbMe7sjSCDPl18jtJI5DR5jtkUWxPXWaLCst6QjH8wxDexfRJic2WRmRXmstr2Y8SxDDWuBO6CQC6IE4KTA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/6.7.7/js/tempus-dominus.min.js" integrity="sha512-jBIYFo+QKM9WQBcWjg/NW/GOxnZAJ2vzheAjhmkhX01LSMjVB3rkytETvH/hBnCMtiHBqaxgoSVlomL5isTJsw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
     @livewireScripts
-
     @stack('scripts')
 </body>
 </html>
+
+</head>
