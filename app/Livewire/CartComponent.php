@@ -33,6 +33,6 @@ class CartComponent extends Component
     }
     public function render()
     {
-        return view('livewire.cart-component')->layout('layouts.based');;
+        return view('livewire.cart-component')->layout('layouts.app');;
     }
 }

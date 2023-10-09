@@ -20,6 +20,6 @@ class AdminProductComponent extends Component
     public function render()
     {
         $products = Product::paginate(15);
-        return view('livewire.admin.admin-product-component',['products'=>$products])->layout('layouts.based');
+        return view('livewire.admin.admin-product-component',['products'=>$products])->layout('layouts.app');
     }
 }
