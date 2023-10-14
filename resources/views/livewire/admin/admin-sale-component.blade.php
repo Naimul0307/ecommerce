@@ -23,7 +23,7 @@
                         <div class="form-group">
                             <label class="col-md-4 control-label">Sale Date</label>
                             <div class="col-md-4">
-                                <input type="text" id="date" placeholder="YYYY/MM/DD H:M:S" class="form-control input-md" wire:model="sale_date">
+                                <input type="date" id="datetime" placeholder="yyyy-mm-dd hh:ii" class="form-control input-md datetime" wire:model="sale_date">
                             </div>
                         </div>
                         <div class="form-group">
@@ -43,10 +43,15 @@
 @push('scripts')
 <script>
     $(function(){
-        $('#date').datepicker({
-            format: 'Y-MM-DD h:m:s',
-        })
-        .on('dp.change',function(ev){
+    $('.datetime').datetimepicker({
+    format: 'HH:mm:ss',
+    icons: {
+      up: 'fas fa-chevron-up',
+      down: 'fas fa-chevron-down',
+      previous: 'fas fa-chevron-left',
+      next: 'fas fa-chevron-right'
+    }
+  }) .on('dp.change',function(ev){
             var data = $('#sale-date').val();
             @this.set('sale_date',data);
         });
