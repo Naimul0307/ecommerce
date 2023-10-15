@@ -487,6 +487,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.17.47/js/bootstrap-datetimepicker.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
 
+    <script src="https://cdn.tiny.cloud/1/dodq424kulpydo0h8b98u2pz5xafh6xhpzko0nk9am29zwan/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
+
     @livewireScripts
     @stack('scripts')
 </body>
