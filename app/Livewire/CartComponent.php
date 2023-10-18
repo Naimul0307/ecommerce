@@ -35,6 +35,7 @@ class CartComponent extends Component
         $this->dispatch('refreshComponent')->to('cart-count-component');
         session()->flash('success_message','All Item has been removed');
     }
+
     public function render()
     {
         return view('livewire.cart-component')->layout('layouts.app');;
