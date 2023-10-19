@@ -5,6 +5,7 @@ namespace App\Livewire;
 use App\Models\Product;
 use App\Models\Category;
 use Livewire\Component;
+use App\Models\Sale;
 use Livewire\WithPagination;
 use Cart;
 
@@ -67,6 +68,7 @@ class ShopComponent extends Component
         }
 
         $categories = Category::all();
-        return view('livewire.shop-component',['products'=> $products,'categories'=>$categories])->layout('layouts.app');
+        $sale = Sale::find(1);
+        return view('livewire.shop-component',['products'=> $products,'categories'=>$categories ,'sale'=>$sale])->layout('layouts.app');
     }
 }

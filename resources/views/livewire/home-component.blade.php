@@ -52,14 +52,20 @@
                         </div>
                         <div class="product-info">
                             <a href="{{route('product.details',['slug'=>$sproduct->slug])}}" class="product-name"><span>{{$sproduct->name}}</span></a>
+                            @if ($sproduct->sale_price > 0  && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
                             <div class="wrap-price">
-                                <ins>
-                                    <p class="product-price">${{$sproduct->sale_price}}</p>
-                                </ins>
-                                <del>
-                                <p class="product-price">${{$sproduct->regular_price}}</p>
-                            </del>
-                        </div>
+                                <div class="wrap-price">
+                                    <ins>
+                                        <p class="product-price">${{$sproduct->sale_price}}</p>
+                                    </ins>
+                                    <del>
+                                    <p class="product-price">${{$sproduct->regular_price}}</p>
+                                   </del>
+                                </div>
+                            </div>
+                            @else
+                            <div class="wrap-price"><span class="product-price">${{$sproduct->regular_price}}</span></div>
+                            @endif
                         </div>
                     </div>
                     @endforeach
@@ -96,14 +102,20 @@
                                     </div>
                                     <div class="product-info">
                                         <a href="{{route('product.details',['slug'=>$lproduct->slug])}}" class="product-name"><span>{{$lproduct->name}}</span></a>
+                                        @if ($lproduct->sale_price > 0  && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
                                         <div class="wrap-price">
-                                            <ins>
-                                                <p class="product-price">${{$sproduct->sale_price}}</p>
-                                            </ins>
-                                            <del>
-                                            <p class="product-price">${{$sproduct->regular_price}}</p>
-                                        </del>
-                                    </div>
+                                            <div class="wrap-price">
+                                                <ins>
+                                                    <p class="product-price">${{$sproduct->sale_price}}</p>
+                                                </ins>
+                                                <del>
+                                                <p class="product-price">${{$sproduct->regular_price}}</p>
+                                               </del>
+                                            </div>
+                                        </div>
+                                        @else
+                                        <div class="wrap-price"><span class="product-price">${{$lproduct->regular_price}}</span></div>
+                                        @endif
                                     </div>
                                 </div>
                                    @endforeach
@@ -153,14 +165,20 @@
                                         <div class="product-info">
                                             <a href="{{route('product.details',['slug'=>$c_product->slug])}}" class="product-name"><span>{{$c_product->name}}</span></a>
 
+                                            @if ($c_product->sale_price > 0  && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
                                             <div class="wrap-price">
-                                                <ins>
-                                                    <p class="product-price">${{$sproduct->sale_price}}</p>
-                                                </ins>
-                                                <del>
-                                                <p class="product-price">${{$sproduct->regular_price}}</p>
-                                            </del>
-                                        </div>
+                                                <div class="wrap-price">
+                                                    <ins>
+                                                        <p class="product-price">${{$c_product->sale_price}}</p>
+                                                    </ins>
+                                                    <del>
+                                                    <p class="product-price">${{$c_product->regular_price}}</p>
+                                                   </del>
+                                                </div>
+                                            </div>
+                                            @else
+                                            <div class="wrap-price"><span class="product-price">${{$c_product->regular_price}}</span></div>
+                                            @endif
                                         </div>
                                     </div>
                                     @endforeach

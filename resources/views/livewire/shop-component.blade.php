@@ -76,6 +76,14 @@
                     .fill-heart{
                         color:#ff7007 !important;
                     }
+
+                .regprice{
+                font-weight: 300;
+                font-size: 13px !important;
+                color: #aaaaaa !important;
+                text-decoration: line-through;
+                padding-left: 10px;
+            }
                 </style>
 
                 <div class="row">
@@ -94,7 +102,15 @@
                                 </div>
                                 <div class="product-info">
                                     <a href="{{ route('product.details',['slug'=>$product->slug]) }}" class="product-name"><span></span>{{$product->name}}</a>
+
+                                    @if ($product->sale_price > 0  && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+                                    <div class="wrap-price">
+                                        <span class="product-price">${{$product->sale_price}}</span>
+                                        <del><span class="product-price regprice">${{$product->regular_price}}</span></del>
+                                    </div>
+                                    @else
                                     <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
+                                    @endif
                                     <a href="" class="btn add-to-cart" wire:click.prevent="store( {{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add To Cart</a>
                                     <div class="product-wish">
                                         @if ($witems->contains($product->id))
