@@ -10,6 +10,7 @@ class EditCouponsComponent extends Component
     public $type;
     public $value;
     public $cart_value;
+    public $expiry_date;
     public $coupon_id;
 
     public function mount($coupon_id)
@@ -19,26 +20,29 @@ class EditCouponsComponent extends Component
         $this->type = $coupon->type;
         $this->value = $coupon->value;
         $this->cart_value = $coupon->cart_value;
+        $this->expiry_date = $coupon->expiry_date;
         $this->coupon_id = $coupon->id;
     }
 
     public function update($fields)
     {
         $this->validateOnly($fields,[
-            'code' => 'required|unique:coupons',
+            'code' => 'required',
             'type'=>'required',
             'value' => 'required|numeric',
-            'cart_value' => 'required|numeric'
+            'cart_value' => 'required|numeric',
+            'expiry_date' => 'required',
         ]);
     }
 
     public function updateCoupon()
     {
         $this->validate([
-            'code' => 'required|unique:coupons',
+            'code' => 'required',
             'type'=>'required',
             'value' => 'required|numeric',
-            'cart_value' => 'required|numeric'
+            'cart_value' => 'required|numeric',
+            'expiry_date' => 'required',
         ]);
 
         $coupon = Coupon::find($this->coupon_id);
@@ -46,6 +50,7 @@ class EditCouponsComponent extends Component
         $coupon->type = $this->type;
         $coupon->value = $this->value;
         $coupon->cart_value = $this->cart_value;
+        $coupon->expiry_date = $this->expiry_date;
         $coupon->save();
         session()->flash('message','Coupon has been update successfully!');
     }

@@ -24,6 +24,7 @@
                                       <th scope="col">Coupon Type</th>
                                       <th scope="col">Coupon Value</th>
                                       <th scope="col">Cart Value</th>
+                                      <th scope="col">Expiry Date</th>
                                       <th scope="col">Action</th>
                                     </tr>
                                   </thead>
@@ -39,6 +40,7 @@
                                         <td>{{$coupon->value}} %</td>
                                         @endif
                                         <td>{{$coupon->cart_value}}</td>
+                                        <td>{{$coupon->expiry_date}}</td>
                                         <td>
                                             <a href="{{route('admin.editcoupons',['coupon_id'=>$coupon->id])}}"><i class="fa fa-edit fa-2x"></i></a>
                                             <a href="#" onclick="confirm('Are you want to delete this coupon?') || event.stopImmediatePropagation()" wire:click.prevent="deleteCoupon({{$coupon->id}})" style="margin-left: 15px"><i class="fa fa-times fa-2x text-danger"></i></a>

@@ -63,6 +63,16 @@
                         </div>
 
                         <div class="form-group">
+                            <label class="col-md-4 control-label">Expiry Date</label>
+                            <div class="col-md-4" wire:ignore>
+                                <input type="date" id="expiry-date" placeholder="Expiry Date" class="form-control input-md" wire:model="expiry_date"/>
+                                @error('expiry_date')
+                                <p class="text-danger">{{$message}}</p>
+                                @enderror
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label class="col-md-4 control-label"></label>
                             <div class="col-md-4">
                                <button type="submit" class="btn btn-primary">Submit</button>
@@ -76,3 +86,14 @@
 </div>
 </div>
 
+@push('scripts')
+<script>
+    $(function(){
+        $('#expiry_date').datetimepicker({format : 'YYYY/MM/DD'});
+        .on('dp.chage',function(ev){
+            var data = $('#expiry_date').val();
+            @this.set('expiry_date',data);
+        });
+    });
+</script>
+@endpush
