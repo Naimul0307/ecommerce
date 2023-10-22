@@ -11,7 +11,6 @@ use Cart;
 
 class ShopComponent extends Component
 {
-    use WithPagination;
     public $sorting;
     public $pagesize;
 

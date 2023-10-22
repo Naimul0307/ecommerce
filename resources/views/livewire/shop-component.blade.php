@@ -1,4 +1,12 @@
 <div>
+    <style>
+        nav svg{
+            height: 20px;
+        }
+        nav .hidden{
+            display: block !important;
+        }
+    </style>
 <!--main area-->
 <main id="main" class="main-site left-sidebar">
 
@@ -23,9 +31,7 @@
                 <div class="wrap-shop-control">
 
                     <h1 class="shop-title">Digital & Electronics</h1>
-
                     <div class="wrap-right">
-
                         <div class="sort-item orderby ">
                             <select name="orderby" class="use-chosen" wire:model="sorting">
                                 <option value="default" selected="selected">Default sorting</option>
@@ -125,17 +131,15 @@
                         @endforeach
                     </ul>
                 </div>
-
+                {{$products->links()}}
                 <div class="wrap-pagination-info">
-
-                    {{$products->links()}}
-                    {{-- <ul class="page-numbers">
+                    <ul class="page-numbers">
                         <li><span class="page-number-item current" >1</span></li>
                         <li><a class="page-number-item" href="#" >2</a></li>
                         <li><a class="page-number-item" href="#" >3</a></li>
                         <li><a class="page-number-item next-link" href="#" >Next</a></li>
                     </ul>
-                    <p class="result-count">Showing 1-8 of 12 result</p> --}}
+                    <p class="result-count">Showing 1-8 of 12 result</p>
                 </div>
             </div><!--end main products area-->
 
