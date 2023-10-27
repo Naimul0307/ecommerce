@@ -73,9 +73,11 @@
                     @if(!Session::has('coupon'))
 					<div class="checkout-info">
 						<label class="checkbox-field">
-							<input class="frm-input " name="have-code" id="have-code" value="1" type="checkbox" wire:model="haveCouponCode">
+							<input class="frm-input " name="have-code" id="have-code" value="1" type="checkbox" wire:model.live="haveCouponCode">
                             <span>I have coupon code</span>
                         </label>
+
+                        @if($haveCouponCode)
                             <div class="summary-item">
                                 <form wire:submit.prevent="applyCouponCode">
                                     <h4 class="title-box">Coupon Code</h4>
@@ -89,6 +91,7 @@
                                     <button type="submit" class="btn btn-small">Apply</button>
                                 </form>
                             </div>
+                         @endif
                          @endif
 						<a class="btn btn-checkout" href="#" wire:click.prevent="checkout">Check out</a>
 						<a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>

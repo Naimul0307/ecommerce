@@ -25,6 +25,7 @@ use App\Livewire\WishlistComponent;
 use App\Livewire\Admin\AddCouponsComponent;
 use App\Livewire\Admin\CouponsComponent;
 use App\Livewire\Admin\EditCouponsComponent;
+use App\Livewire\ThankyouComponenet;
 
 /*
 |--------------------------------------------------------------------------
@@ -49,6 +50,7 @@ Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/product-category/{category_slug}', CategoryComponent::class)->name('product.category');
 Route::get('/search', SearchComponent::class)->name('product.search');
 Route::get('/wishlist', WishlistComponent::class)->name('product.wishlist');
+Route::get('/thank-you', ThankyouComponenet::class)->name('thankyou');
 
 /* Route::middleware([
     'auth:sanctum',
