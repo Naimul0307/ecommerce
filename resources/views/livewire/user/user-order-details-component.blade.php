@@ -9,7 +9,7 @@
                                 Ordered Items
                               </div>
                               <div class="col-md-6">
-                                <a href="{{ route('admin.orders') }}" class="btn btn-success pull-right">All Orders</a>
+                                <a href="{{ route('user.orders') }}" class="btn btn-success pull-right">My Orders</a>
                               </div>
                         </div>
                     </div>
@@ -20,21 +20,16 @@
                                 @foreach ($order->orderItems as $item)
                                 <li class="pr-cart-item">
                                     <div class="product-image">
-
                                         <figure><img src=" {{asset('assets/images/products')}}/{{$item->product->image}}" alt="{{$item->product->name}}"></figure>
                                     </div>
                                     <div class="product-name">
                                         <a class="link-to-product" href="{{ route('product.details',['slug'=>$item->product->slug]) }}">{{$item->product->name}}</a>
                                     </div>
-                                    <div class="price-field produtc-price">
-                                        <p class="price">${{$item->price}}</p>
-                                    </div>
+                                    <div class="price-field produtc-price"><p class="price">${{$item->price}}</p></div>
                                     <div class="quantity">
                                         <h5>{{$item->quantity}}</h5>
                                     </div>
-                                    <div class="price-field sub-total">
-                                        <p class="price">${{$item->price * $item->quantity}}</p>
-                                    </div>
+                                    <div class="price-field sub-total"><p class="price">${{$item->price * $item->quantity}}</p></div>
                                 </li>
                                 @endforeach
                             </ul>
