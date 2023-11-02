@@ -53,7 +53,6 @@
                     <p>No item in cart</p>
                     @endif
 				</div>
-
 				<div class="summary">
 					<div class="order-summary">
 						<h4 class="title-box">Order Summary</h4>
@@ -94,7 +93,7 @@
                          @endif
                          @endif
 						<a class="btn btn-checkout" href="#" wire:click.prevent="checkout">Check out</a>
-						<a class="link-to-shop" href="shop.html">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
+						<a class="link-to-shop" href="/shop">Continue Shopping<i class="fa fa-arrow-circle-right" aria-hidden="true"></i></a>
 					</div>
 					<div class="update-clear">
 						<a class="btn btn-clear" wire:click.prevent="destroyAll()" href="#">Clear Shopping Cart</a>
@@ -102,7 +101,6 @@
 					</div>
 				</div>
                 @else
-
                 <div class="text-center" style="padding: 30px 0;">
 
                     <h1>Your cart is empty</h1>
