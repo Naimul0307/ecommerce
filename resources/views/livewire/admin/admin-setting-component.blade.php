@@ -102,6 +102,14 @@
                             </div>
 
                             <div class="form-group">
+                                <label class="col-md-4 control-label">Vimeo</label>
+                                <div class="col-md-4"> 
+                                    <input type="text" placeholder="Vimeo" class="form-control input-md" wire:model="vimeo">
+                                    @error('vimeo') <p class="text-danger">{{$message}}</p> @enderror
+                                </div>
+                            </div>
+
+                            <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
                                     <button type="submit" class="btn btn-primary">Save</button>

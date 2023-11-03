@@ -17,6 +17,7 @@ class AdminSettingComponent extends Component
     public $pinterest;
     public $instagram;
     public $youtube;
+    public $vimeo;
     public $linkedin;
 
     public function mount()
@@ -36,6 +37,7 @@ class AdminSettingComponent extends Component
             $this->instagram = $setting->instagram;
             $this->youtube = $setting->youtube;
             $this->linkedin = $setting->linkedin;
+            $this->vimeo = $setting->vimeo;
         }
     }
 
@@ -53,6 +55,7 @@ class AdminSettingComponent extends Component
             'instagram'=> 'required',
             'youtube'=> 'required',
             'linkedin' => 'required',
+            'vimeo' => 'required',
         ]);
     }
 
@@ -70,6 +73,7 @@ class AdminSettingComponent extends Component
             'instagram'=> 'required',
             'youtube'=> 'required',
             'linkedin' => 'required',
+            'vimeo'=> 'required',
         ]);
 
         $setting = Setting::find(1);
@@ -89,6 +93,7 @@ class AdminSettingComponent extends Component
         $setting->linkedin = $this->linkedin;
         $setting->instagram = $this->instagram;
         $setting->youtube = $this->youtube;
+        $setting->vimeo = $this->vimeo;
         $setting->save();
         session()->flash('message','Setting has been saved successfully');
     }
