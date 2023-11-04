@@ -22,6 +22,6 @@ class AdminDashboardComponent extends Component
             'totalRevenus' => $totalRevenus,
             'todaySales' => $todaySales,
             'todayRevenus' => $totalRevenus,
-        ])->layout('layouts.app');
+        ])->layout('layouts.base');
     }
 }

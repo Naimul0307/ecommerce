@@ -184,6 +184,6 @@ class CheckoutComponent extends Component
     public function render()
     {
         $this->verifyForCheckout();
-        return view('livewire.checkout-component')->layout('layouts.app');
+        return view('livewire.checkout-component')->layout('layouts.base');
     }
 }

@@ -31,6 +31,6 @@ class WishlistComponent extends Component
 
     public function render()
     {
-        return view('livewire.wishlist-component')->layout('layouts.app');
+        return view('livewire.wishlist-component')->layout('layouts.base');
     }
 }

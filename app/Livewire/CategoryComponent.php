@@ -52,6 +52,6 @@ class CategoryComponent extends Component
         }
 
         $categories = Category::all();
-        return view('livewire.category-component',['products'=> $products,'categories'=>$categories,'category_name'=>$category_name])->layout('layouts.app');
+        return view('livewire.category-component',['products'=> $products,'categories'=>$categories,'category_name'=>$category_name])->layout('layouts.base');
     }
 }

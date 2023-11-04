@@ -164,6 +164,6 @@ class CartComponent extends Component
         }
 
         $this->setAmountForCheckout();
-        return view('livewire.cart-component')->layout('layouts.app');;
+        return view('livewire.cart-component')->layout('layouts.base');;
     }
 }

@@ -17,6 +17,6 @@ class AdminOrderDetailsComponent extends Component
     public function render()
     {
         $order = Order::find($this->order_id);
-        return view('livewire.admin.admin-order-details-component',['order'=>$order])->layout('layouts.app');
+        return view('livewire.admin.admin-order-details-component',['order'=>$order])->layout('layouts.base');
     }
 }

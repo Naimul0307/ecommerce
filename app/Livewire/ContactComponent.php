@@ -44,6 +44,6 @@ class ContactComponent extends Component
     public function render()
     {
         $setting = Setting::find(1);
-        return view('livewire.contact-component',['setting'=>$setting])->layout('layouts.app');
+        return view('livewire.contact-component',['setting'=>$setting])->layout('layouts.base');
     }
 }

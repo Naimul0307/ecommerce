@@ -68,6 +68,6 @@ class ShopComponent extends Component
 
         $categories = Category::all();
         $sale = Sale::find(1);
-        return view('livewire.shop-component',['products'=> $products,'categories'=>$categories ,'sale'=>$sale])->layout('layouts.app');
+        return view('livewire.shop-component',['products'=> $products,'categories'=>$categories ,'sale'=>$sale])->layout('layouts.base');
     }
 }

@@ -53,6 +53,6 @@ class SearchComponent extends Component
         }
 
         $categories = Category::all();
-        return view('livewire.search-component',['products'=> $products,'categories'=>$categories])->layout('layouts.app');
+        return view('livewire.search-component',['products'=> $products,'categories'=>$categories])->layout('layouts.base');
     }
 }
