@@ -135,12 +135,19 @@
                                 @enderror
                             </div>
                         </div>
-                       {{-- <div class="form-group">
-                            <label class="col-md-4 control-label">Images</label>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Product Gallery</label>
                             <div class="col-md-4">
                                 <input type="file" placeholder="Images" class="form-control input-file" wire:model="images" multiple="multiple"/>
+                                @if($images)
+                                @foreach ($images as $image)
+                                    <img src="{{$image->temporaryUrl()}}" width="120" />
+                                @endforeach
+                                @endif
                             </div>
-                        </div> --}}
+                        </div>
+
                         <div class="form-group">
                             <label class="col-md-4 control-label"></label>
                             <div class="col-md-4">
