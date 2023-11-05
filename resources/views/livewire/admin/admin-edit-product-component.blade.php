@@ -123,6 +123,7 @@
                                 @enderror
                             </div>
                         </div>
+
                         <div class="form-group">
                             <label class="col-md-4 control-label">Image</label>
                             <div class="col-md-4">
@@ -137,12 +138,26 @@
                                 @enderror
                             </div>
                         </div>
-                       {{-- <div class="form-group">
-                            <label class="col-md-4 control-label">Images</label>
+
+                        <div class="form-group">
+                            <label class="col-md-4 control-label">Product Gallery</label>
                             <div class="col-md-4">
-                                <input type="file" placeholder="Images" class="form-control input-file" wire:model="images" multiple/>
+                                <input type="file" placeholder="Image" class="form-control input-file" wire:model="newimages" multiple/>
+                                @if($newimages)
+                                @foreach ($newimages as $newimage )
+                                    @if($newimage)
+                                     <img src="{{$newimage->temporaryUrl()}}" width="120" />
+                                    @endif
+                                @endforeach
+                                @else
+                                 @foreach ($images as $image )
+                                     @if ($image)
+                                          <img src="{{asset('assets/images/products')}}/{{$image}}" width="120"/>
+                                     @endif
+                                 @endforeach
+                                @endif
                             </div>
-                        </div> --}}
+                        </div>
                         <div class="form-group">
                             <label class="col-md-4 control-label"></label>
                             <div class="col-md-4">
