@@ -39,6 +39,26 @@ class DetailsComponent extends Component
         }
     }
 
+    public function addToWishlist($product_id,$product_name,$product_price)
+    {
+        Cart::instance('wishlist')->add($product_id,$product_name,1,$product_price)->associate('App\Models\Product');
+        $this->dispatch('refreshComponent')->to('wishlist-count-component ');
+    }
+
+    public function removeFromWishlist($product_id)
+    {
+        foreach(Cart::instance('wishlist')->content() as $witem)
+        {
+            if($witem->id == $product_id)
+            {
+                Cart::instance('wishlist')->remove($witem->rowId);
+                $this->dispatch('refreshComponent')->to('wishlist-count-component ');
+                return;
+            }
+        }
+    }
+
+
     public function render()
     {
         $product = Product::where('slug',$this->slug)->first();

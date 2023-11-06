@@ -117,7 +117,7 @@
                                     @else
                                     <div class="wrap-price"><span class="product-price">${{$product->regular_price}}</span></div>
                                     @endif
-                                    <a href="" class="btn add-to-cart" wire:click.prevent="store( {{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add To Cart</a>
+                                    <a href="#" class="btn add-to-cart" wire:click.prevent="store( {{$product->id}},'{{$product->name}}',{{$product->regular_price}})">Add To Cart</a>
                                     <div class="product-wish">
                                         @if ($witems->contains($product->id))
                                         <a href="#" wire:click.prevent="removeFromWishlist({{$product->id}})"><i class="fa fa-heart fill-heart"></i></a>
