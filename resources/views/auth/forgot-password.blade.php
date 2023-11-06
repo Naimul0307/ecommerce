@@ -50,7 +50,11 @@
 					<div class=" main-content-area">
 						<div class="wrap-login-item ">
 							<div class="login-form form-item form-stl">
-                           
+								@if (session('status'))
+								<div class="mb-4 font-medium text-sm text-green-600 dark:text-green-400">
+									{{ session('status') }}
+								</div>
+								@endif
                                 <x-validation-errors class="mb-4" />
 								<form name="frm-login" method="POST" action=""{{ route('password.email') }}>
                                     @csrf

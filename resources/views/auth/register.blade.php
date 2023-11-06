@@ -112,7 +112,6 @@
 			</div><!--end row-->
 
 		</div><!--end container-->
-
 	</main>
 	<!--main area-->
 </x-base-layout>

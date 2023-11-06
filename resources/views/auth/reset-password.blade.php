@@ -54,9 +54,9 @@
 						<div class="wrap-login-item ">
 							<div class="login-form form-item form-stl">
                                 <x-validation-errors class="mb-4" />
-								<form name="frm-login" method="POST" action=""{{ route('password.update') }}>
+								<form name="frm-login" method="POST" action="{{ route('password.update') }}">
                                     @csrf
-                                    <input type="hidden" name="token" value="{{ $request->route('token') }}">
+									<input type="hidden" name="token" value="{{ $request->route('token') }}">
 									<fieldset class="wrap-title">
 										<h3 class="form-title">Forgot Password</h3>
 									</fieldset>
