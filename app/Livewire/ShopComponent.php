@@ -2,6 +2,7 @@
 
 namespace App\Livewire;
 
+use Illuminate\Support\Facades\Auth;
 use App\Models\Product;
 use App\Models\Category;
 use Livewire\Component;
@@ -74,6 +75,12 @@ class ShopComponent extends Component
 
         $categories = Category::all();
         $sale = Sale::find(1);
+
+        if(Auth::check())
+        {
+            Cart::instance('cart')->store(Auth::user()->email);
+        }
+        
         return view('livewire.shop-component',['products'=> $products,'categories'=>$categories ,'sale'=>$sale])->layout('layouts.base');
     }
 }
