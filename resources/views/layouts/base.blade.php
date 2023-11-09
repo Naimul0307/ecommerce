@@ -127,6 +127,11 @@
                                         <li class="menu-item" >
 											<a title="My Orders" href="{{route('user.orders')}}">My Orders</a>
 										</li>
+
+										<li class="menu-item" >
+											<a title="My Profile" href="{{route('user.profile')}}">My Profile</a>
+										</li>
+
 										<li class="menu-item" >
 											<a title="Change Password" href="{{route('user.changepassword')}}">Change Password</a>
 										</li>

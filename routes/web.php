@@ -35,6 +35,7 @@ use App\Livewire\User\UserReviewComponent;
 use App\Livewire\Admin\AdminContactComponent;
 use App\Livewire\Admin\AdminSettingComponent;
 use App\Livewire\User\UserChangePasswordComponent;
+use App\Livewire\User\UserProfileComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -79,6 +80,7 @@ Route::middleware(['auth:sanctum','verified'])->group(function(){
     Route::get('/user/order/{order_id}',  UserOrderDetailsComponent::class)->name('user.orderdetails');
     Route::get('/user/review/{order_item_id}', UserReviewComponent::class)->name('user.review');
     Route::get('/user/change-password', UserChangePasswordComponent::class)->name('user.changepassword');
+    Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
 });
 
 //For Admin
