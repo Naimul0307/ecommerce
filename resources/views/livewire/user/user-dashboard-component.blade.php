@@ -91,7 +91,7 @@
                 <div class="row">
                   <div class="col-xs-8 text-left">
                     <span class="icon-stat-label">Today Delivered</span>
-                    <span class="icon-stat-value">${{$totalDelivered}}</span>
+                    <span class="icon-stat-value">{{$totalDelivered}}</span>
                   </div>    
                   <div class="col-xs-4 text-center">
                     <i class="fa fa-gift icon-stat-visual bg-secondary"></i>
@@ -160,7 +160,7 @@
                                      <td>{{$order->zipcode}}</td>
                                      <td>{{$order->status}}</td>
                                      <td>{{$order->created_at}}</td>
-                                     <td><a href="{{route('user.ordersdetails',['order_id'=>$order->id])}}" class="btn btn-info btn-sm">Details</a></td>
+                                     <td><a href="{{route('user.orderdetails',['order_id'=>$order->id])}}" class="btn btn-info btn-sm">Details</a></td>
                                  </tr>
                              @endforeach
                          </tbody>

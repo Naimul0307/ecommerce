@@ -50,7 +50,7 @@ class UserEditProfileComponent extends Component
         {
             if($this->image)
             {
-                unlink('assets/images/profile/',$this->image);
+                unlink('assets/images/profile/'.$this->image);
             }
             $imageName = Carbon::now()->timestamp.'.'.$this->newimage->extension();
             $this->newimage->storeAs('profile',$imageName);
