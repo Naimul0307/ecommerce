@@ -37,6 +37,9 @@ use App\Livewire\Admin\AdminSettingComponent;
 use App\Livewire\User\UserChangePasswordComponent;
 use App\Livewire\User\UserProfileComponent;
 use App\Livewire\User\UserEditProfileComponent;
+use App\Livewire\Admin\AdminAttributesComponent;
+use App\Livewire\Admin\AdminAddAttributesComponent;
+use App\Livewire\Admin\AdminEditAttributesComponent;
 
 /*
 |--------------------------------------------------------------------------
@@ -111,4 +114,8 @@ Route::middleware(['auth:sanctum','verified','authadmin'])->group(function(){
     Route::get('/admin/orders/{order_id}',AdminOrderDetailsComponent::class)->name('admin.ordersdetails');
     Route::get('/admin-contact',AdminContactComponent::class)->name('admin.contact');
     Route::get('/admin-setting',AdminSettingComponent::class)->name('admin.setting');
+
+    Route::get('/admin/attributes',AdminAttributesComponent::class)->name('admin.attributes');
+    Route::get('/admin/attributes/add',AdminAddAttributesComponent::class)->name('admin.addattributes');
+    Route::get('/admin/attributes/edit/{attribute_id}',AdminEditAttributesComponent::class)->name('admin.editattributes');
 });

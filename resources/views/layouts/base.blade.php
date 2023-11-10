@@ -109,6 +109,9 @@
 									<li class="menu-item">
                                         <a title="Setting" href="{{route('admin.setting')}}">Setting</a>
                                     </li>
+									<li class="menu-item">
+                                        <a title="Attribute" href="{{route('admin.attributes')}}">Attribute</a>
+                                    </li>
                                         <li class="menu-item">
                                             <a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a>
                                         </li>
